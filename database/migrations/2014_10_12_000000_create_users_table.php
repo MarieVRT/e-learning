@@ -20,11 +20,10 @@ return new class extends Migration
             $table->string('lastname',255);
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->date('date_of_birth');
-            $table->string('role');
+            $table->string('role')->default('ROLE_LEARNER');
             $table->string('password');
             $table->rememberToken();
-            $table->unsignedBigInteger('advancement_id');
+            $table->unsignedBigInteger('advancement_id')->nullable();
             $table->foreign('advancement_id')
                 ->references('id')
                 ->on('advancement')

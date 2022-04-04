@@ -1,6 +1,6 @@
 @extends('layouts.template')
 
-@section('content')
+@section('title')
     <h1 class="mb-0">{{ __('Reset Password') }}</h1>
 
     <div class="card-body">
