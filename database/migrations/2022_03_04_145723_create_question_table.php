@@ -14,20 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::disableForeignKeyConstraints();
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('question', function (Blueprint $table) {
             $table->id();
-            $table->string('firstname', 255);
-            $table->string('lastname',255);
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->date('date_of_birth');
-            $table->string('role');
-            $table->string('password');
-            $table->rememberToken();
-            $table->unsignedBigInteger('advancement_id');
-            $table->foreign('advancement_id')
+            $table->string('question');
+            $table->unsignedBigInteger('language_id');
+            $table->foreign('language_id')
                 ->references('id')
-                ->on('advancement')
+                ->on('language')
                 ->onDelete('restrict')
                 ->onUpdate('restrict');
             $table->timestamps();
@@ -42,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('question');
     }
 };
