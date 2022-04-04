@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::disableForeignKeyConstraints();
         Schema::create('question', function (Blueprint $table) {
             $table->id();
-            $table->string('question');
+            $table->longText('question');
             $table->unsignedBigInteger('language_id');
             $table->foreign('language_id')
                 ->references('id')
