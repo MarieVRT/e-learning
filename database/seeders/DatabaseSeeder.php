@@ -48,39 +48,42 @@ class DatabaseSeeder extends Seeder
             'name' => 'Python',
             'level' => '1',
         ]);
+        DB::table('language')->insert([
+            'id' => 4,
+            'name' => 'Php',
+            'level' => '2',
+        ]);
 
         //QUESTIONS
         DB::table('question')->insert([
             'id' => 1,
             'question' => 'comment initialiser une variable en chaine de caractère ?',
+            'choice_1' => '',
+            'choice_2' => ' x = \'blabla\' ',
+            'choice_3' => '',
+            'choice_4' => '',
+            'answer' => ' x = \'blabla\' ',
             'language_id' => 3,
         ]);
         DB::table('question')->insert([
             'id' => 2,
             'question' => 'comment éviter les fuites mémoire ?',
+            'choice_1' => ' pas la bonne réponse',
+            'choice_2' => ' bonne chance mec',
+            'choice_3' => ' pas la bonne réponse',
+            'choice_4' => ' pas la bonne réponse',
+            'answer' => ' bonne chance mec',
             'language_id' => 2,
         ]);
         DB::table('question')->insert([
             'id' => 3,
             'question' => 'comment créer une classe ?',
-            'language_id' => 1,
-        ]);
-
-        //ANSWERS
-        DB::table('answer')->insert([
-            'id' => 1,
-            'answer' => ' x = \'blabla\' ',
-            'question_id' => 3,
-        ]);
-        DB::table('answer')->insert([
-            'id' => 2,
-            'answer' => ' bonne chance mec',
-            'question_id' => 2,
-        ]);
-        DB::table('answer')->insert([
-            'id' => 3,
+            'choice_1' => ' public static { ... }',
+            'choice_2' => ' public class Main { ... }',
+            'choice_3' => ' public Main { ... }',
+            'choice_4' => ' public { ... }',
             'answer' => ' public class Main { ... }',
-            'question_id' => 1,
+            'language_id' => 1,
         ]);
 
         //ADVANCEMENT

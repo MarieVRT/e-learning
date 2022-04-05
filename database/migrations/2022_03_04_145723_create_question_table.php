@@ -17,6 +17,11 @@ return new class extends Migration
         Schema::create('question', function (Blueprint $table) {
             $table->id();
             $table->longText('question');
+            $table->longText('choice_1');
+            $table->longText('choice_2');
+            $table->longText('choice_3');
+            $table->longText('choice_4');
+            $table->longText('answer');
             $table->unsignedBigInteger('language_id');
             $table->foreign('language_id')
                 ->references('id')

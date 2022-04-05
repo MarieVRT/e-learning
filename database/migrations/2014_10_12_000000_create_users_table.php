@@ -21,12 +21,6 @@ return new class extends Migration
             $table->string('role')->default('ROLE_LEARNER');
             $table->string('password');
             $table->rememberToken();
-            $table->unsignedBigInteger('advancement_id')->nullable();
-            $table->foreign('advancement_id')
-                ->references('id')
-                ->on('advancement')
-                ->onDelete('restrict')
-                ->onUpdate('restrict');
             $table->timestamps();
         });
     }

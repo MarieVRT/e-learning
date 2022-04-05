@@ -15,3 +15,14 @@
     padding: 20px 100px 20px 100px;
     border: none;
 }
+.question_content > a {
+    color: white;
+}
+.question_content > a:hover {
+    color: #bbbbbb;
+}
+.questsion_level {
+    font-size: 30px;
+    color: rgba(243, 106, 131, 1);
+
+}
