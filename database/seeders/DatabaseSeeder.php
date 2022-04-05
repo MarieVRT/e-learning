@@ -22,14 +22,16 @@ class DatabaseSeeder extends Seeder
             'firstname' => 'louis',
             'lastname' => 'martin',
             'email' => 'louis.martin@gmail.com',
-            'password' => bcrypt('louis'),
+            'password' => bcrypt('louismartin'),
+            'is_easy_admin' => false
         ]);
         DB::table('users')->insert([
             'id' => 2,
             'firstname' => 'marie',
             'lastname' => 'verraest',
             'email' => 'marie.verraest@gmail.com',
-            'password' => bcrypt('marie'),
+            'password' => bcrypt('marieverraest'),
+            'is_easy_admin' => true
         ]);
 
         //LANGUAGES
