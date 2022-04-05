@@ -8,6 +8,6 @@
 
 @section('content')
     <div class="button_question">
-        <p class="questsion_level">Question N° </p>
+        <p class="question_level">Question N° </p>
     </div>
 @endsection

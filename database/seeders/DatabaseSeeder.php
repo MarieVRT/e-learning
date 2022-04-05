@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             'firstname' => 'louis',
             'lastname' => 'martin',
             'email' => 'louis.martin@gmail.com',
+            'gender' => 'male',
             'password' => bcrypt('louismartin'),
             'is_easy_admin' => false
         ]);
@@ -30,6 +31,7 @@ class DatabaseSeeder extends Seeder
             'firstname' => 'marie',
             'lastname' => 'verraest',
             'email' => 'marie.verraest@gmail.com',
+            'gender' => 'female',
             'password' => bcrypt('marieverraest'),
             'is_easy_admin' => true
         ]);
@@ -99,6 +101,12 @@ class DatabaseSeeder extends Seeder
             'id' => 2,
             'points' => 0,
             'language_id' => 2,
+            'user_id' => 2,
+        ]);
+        DB::table('advancement')->insert([
+            'id' => 3,
+            'points' => 0,
+            'language_id' => 1,
             'user_id' => 2,
         ]);
     }

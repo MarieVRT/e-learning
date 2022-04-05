@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('firstname', 255);
             $table->string('lastname',255);
             $table->string('email')->unique();
+            $table->enum('gender', ['male', 'female', 'other']);
             $table->string('role')->default('ROLE_LEARNER');
             $table->string('password');
             $table->rememberToken();
