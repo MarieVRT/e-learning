@@ -27,3 +27,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile']);
+
+Route::post('/profile', [App\Http\Controllers\HomeController::class, 'profile']);
+
+Route::get('/language/3/', [App\Http\Controllers\LanguageController::class, 'store'])->name('language-store');

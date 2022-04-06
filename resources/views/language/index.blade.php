@@ -7,30 +7,22 @@
 
 
 @section('content')
-    <div class="button_question">
+    @foreach($question as $q)
 
-
-        @foreach($question as $q)
-
-            @if(($q->language_id == $language->id) && $q->level == $level)
-
-
-                <p class="questsion_level">{{ $q->question }}</p>
-                    <button type="button" class="question_content">
-                        <a onclick="{{\App\Http\Controllers\LanguageController::checkAnswer($q->choice_1, $q->answer)}}">{{$q->choice_1}}</a>
-                    </button>
-                    <button type="button" class="question_content">
-                        <a onclick="checkAnswer(`{{$q->choice_2}}`, `{{$q->answer}}`)">{{$q->choice_2}} </a>
-                    </button>
-                    <button type="button" class="question_content">
-                        <a onclick="checkAnswer(`{{$q->choice_3}}`, `{{$q->answer}}`)">{{$q->choice_3}} </a>
-                    </button>
-                    <button type="button" class="question_content">
-                        <a onclick="checkAnswer(`{{$q->choice_4}}`, `{{$q->answer}}`)">{{$q->choice_4}} </a>
-                    </button>
-                <p>REPONSE : {{$q->answer}}</p>
-            @endif
-
+        @if(($q->language_id == $language->id) && $q->level == $level)
+            <div class="button_question">
+                <form method="get" action="{{route("language-store")}}">
+                <p>
+                    {{$q->question}}<br />
+                    <label><input type="radio" name="question" value="{{$q->choice_1}}" />{{$q->choice_1}}</label><br />
+                    <label><input type="radio" name="question" value="{{$q->choice_2}}" />{{$q->choice_2}}</label><br />
+                    <label><input type="radio" name="question" value="{{$q->choice_3}}" />{{$q->choice_3}}</label><br />
+                    <label><input type="radio" name="question" value="{{$q->choice_4}}" />{{$q->choice_4}}</label>
+                    <input type="hidden" name="answer" value="{{$q->id}}">
+                    <input type="submit" value="Valider" />
+                </p>
+                </form>
+            </div>
+        @endif
     @endforeach
-    </div>
 @endsection
