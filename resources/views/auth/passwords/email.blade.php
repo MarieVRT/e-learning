@@ -2,7 +2,7 @@
 
 @section('title')
     <h1 class="mb-0">{{ __('Réinitialiser votre mot de passe') }}</h1>
-
+    <p>Saisissez votre adresse e-mail et nous vous enverrons un e-mail contenant les instructions pour réinitialiser votre mot de passe.</p>
     <div class="card-body">
         @if (session('status'))
             <div class="alert alert-success" role="alert">

@@ -1,7 +1,7 @@
 @extends('layouts.template')
 
 @section('title')
-        <h1 class="mb-0">{{ __('Register') }}</h1>
+        <h1 class="mb-0">{{ __('S\'inscire') }}</h1>
         <div class="card-body">
             <form method="POST" action="{{ route('register') }}">
                 @csrf
@@ -36,7 +36,6 @@
 
                 <div class="row mb-3">
                     <label for="gender" class="col-md-4 col-form-label text-md-end">{{ __('Genre') }}</label>
-
                     <div class="col-md-6">
                         <select class="form-control @error('gender') is-invalid @enderror" id="gender" name="gender" required autocomplete="gender" autofocus>
                             <option selected="" disabled=""></option>
@@ -95,6 +94,10 @@
                             {{ __('S\'enregistrer') }}
                         </button>
                     </div>
+                </div>
+
+                <div class="sign-info">
+                    <span class="dark-color d-inline-block line-height-2">Vous avez déjà un compte? <a href="{{ route('login') }}">Se connecter</a></span>
                 </div>
             </form>
         </div>
