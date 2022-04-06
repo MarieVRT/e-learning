@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Language;
+use App\Models\Question;
 
 class HomeController extends Controller
 {
@@ -12,6 +13,7 @@ class HomeController extends Controller
     //Mapping all languages
     public function index(){
         $language = Language::orderBy('level', 'ASC')->get();
-        return view("home.index", ["language" => $language]);
+        $question = Question::orderBy('level', 'ASC')->get();
+        return view("home.index", ["language" => $language, "question" => $question]);
     }
 }

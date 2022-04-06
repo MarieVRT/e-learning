@@ -57,26 +57,29 @@ class DatabaseSeeder extends Seeder
         //QUESTIONS
         DB::table('question')->insert([
             'id' => 1,
+            'level' => '1',
             'question' => 'comment initialiser une variable en chaine de caractère ?',
-            'choice_1' => '',
+            'choice_1' => 'x = string',
             'choice_2' => ' x = \'blabla\' ',
-            'choice_3' => '',
-            'choice_4' => '',
+            'choice_3' => 'x == blabla',
+            'choice_4' => 'x -= string',
             'answer' => ' x = \'blabla\' ',
             'language_id' => 3,
         ]);
         DB::table('question')->insert([
             'id' => 2,
+            'level' => '2',
             'question' => 'comment éviter les fuites mémoire ?',
             'choice_1' => ' pas la bonne réponse',
             'choice_2' => ' bonne chance mec',
             'choice_3' => ' pas la bonne réponse',
             'choice_4' => ' pas la bonne réponse',
             'answer' => ' bonne chance mec',
-            'language_id' => 2,
+            'language_id' => 3,
         ]);
         DB::table('question')->insert([
             'id' => 3,
+            'level' => '1',
             'question' => 'comment créer une classe ?',
             'choice_1' => ' public static { ... }',
             'choice_2' => ' public class Main { ... }',
@@ -84,6 +87,17 @@ class DatabaseSeeder extends Seeder
             'choice_4' => ' public { ... }',
             'answer' => ' public class Main { ... }',
             'language_id' => 1,
+        ]);
+        DB::table('question')->insert([
+            'id' => 4,
+            'level' => '3',
+            'question' => 'comment créer une classe ?',
+            'choice_1' => ' public static { ... }',
+            'choice_2' => ' public class Main { ... }',
+            'choice_3' => ' public Main { ... }',
+            'choice_4' => ' public { ... }',
+            'answer' => ' public class Main { ... }',
+            'language_id' => 3,
         ]);
 
         //ADVANCEMENT

@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::disableForeignKeyConstraints();
         Schema::create('question', function (Blueprint $table) {
             $table->id();
+            $table->string('level');
             $table->longText('question');
             $table->longText('choice_1');
             $table->longText('choice_2');
