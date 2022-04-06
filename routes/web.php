@@ -19,7 +19,8 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [HomeController::class, 'index']);
-Route::get('/language/{id}', [LanguageController::class, 'index'])->middleware('auth')->where('id','[0-9]+');
+
+Route::get('/language/{id}/{level}', [LanguageController::class, 'index'])->middleware('auth')->where('id','[0-9]+')->where('level','[0-9]+');
 
 Auth::routes();
 
