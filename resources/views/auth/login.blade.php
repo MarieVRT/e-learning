@@ -37,6 +37,13 @@
 
             <div class="row mb-3">
                 <div class="col-md-6 offset-md-4">
+                    @if (Route::has('password.request'))
+                        <div class="form-group">
+                            <a class="float-right" href="{{ route('password.request') }}">
+                                {{ __('Mot de passe oublié?') }}
+                            </a>
+                        </div>
+                    @endif
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
@@ -53,12 +60,11 @@
                         {{ __('Se connecter') }}
                     </button>
 
-                    @if (Route::has('password.request'))
-                        <a class="btn btn-link" href="{{ route('password.request') }}">
-                            {{ __('Mot de passe oublié?') }}
-                        </a>
-                    @endif
                 </div>
+            </div>
+
+            <div class="sign-info">
+                <span class="dark-color d-inline-block line-height-2">Vous n'avez pas de compte? <a href="{{ route('register') }}">S'inscrire</a></span>
             </div>
         </form>
     </div>
