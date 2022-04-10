@@ -20,14 +20,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/language/{id}/{level}', [LanguageController::class, 'index'])->middleware('auth')->where('id','[0-9]+')->where('level','[0-9]+');
+Route::get('/language/{id}/{level}', [LanguageController::class, 'index'])->name('language')->middleware('auth')->where('id','[0-9]+')->where('level','[0-9]+');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile']);
+Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('profile');
 
 Route::post('/profile', [App\Http\Controllers\HomeController::class, 'profile']);
-
-Route::get('/language/3/', [App\Http\Controllers\LanguageController::class, 'store'])->name('language-store');

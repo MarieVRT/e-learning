@@ -18,42 +18,32 @@
     <link rel='stylesheet' href="https://templates.iqonic.design/metordash/laravel/public/assets/css/slick-theme.css" />
 </head>
 
+<nav class="topnav">
+    <a class="active" href="{{ route('home') }}">Accueil</a>
+    <a href="{{ route('profile') }}">Profil</a>
+    @guest
+        @if (Route::has('login'))
+            <a class="nav-link" href="{{ route('login') }}">{{ __('Connexion') }}</a>
+        @endif
+
+        @if (Route::has('register'))
+            <a class="nav-link" href="{{ route('register') }}">{{ __('Inscription') }}</a>
+        @endif
+    @else
+        <a href="{{ route('logout') }}"
+           onclick="event.preventDefault();
+                 document.getElementById('logout-form').submit();">
+            {{ __('Déconnexion') }}
+            <i class="fa fa-power-off"></i>
+        </a>
+
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+            @csrf
+        </form>
+    @endguest
+</nav>
 
 <div>
-    <header class="header-section">
-        <div class="container">
-            <nav class="main-menu">
-                <ul>
-                    @guest
-                        @if (Route::has('login'))
-                            <li class="nav-item right">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                        @endif
-
-                        @if (Route::has('register'))
-                            <li class="nav-item right">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                            </li>
-                        @endif
-                    @else
-                        <li class="right"> Bonjour {{ Auth::user()->firstname }}
-                            <a href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
-                                                                     document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                                <i class="fa fa-power-off"></i>
-                            </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
-                        </li>
-                    @endguest
-                </ul>
-            </nav>
-        </div>
-    </header>
     <section class="sign-in-page">
         <div class="container p-0">
             <div class="row no-gutters">
