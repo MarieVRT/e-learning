@@ -10,4 +10,10 @@ class Advancement extends Model
     protected $table = "advancement";
 
     use HasFactory;
+
+    protected $fillable = [
+        'user_id',
+        'language_id',
+        'points'
+    ];
 }

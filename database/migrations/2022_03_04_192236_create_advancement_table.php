@@ -20,15 +20,11 @@ return new class extends Migration
             $table->unsignedBigInteger('language_id');
             $table->foreign('language_id')
                 ->references('id')
-                ->on('language')
-                ->onDelete('restrict')
-                ->onUpdate('restrict');
+                ->on('language');
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')
                 ->references('id')
-                ->on('user')
-                ->onDelete('restrict')
-                ->onUpdate('restrict');
+                ->on('user');
             $table->timestamps();
         });
     }

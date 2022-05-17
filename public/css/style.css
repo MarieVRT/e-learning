@@ -1,3 +1,10 @@
+.content h2{
+    font-size: 100px;
+}
+
+.content p{
+    font-size: 40px;
+}
 .button_question{
     flex-wrap: wrap;
     display: flex;
@@ -57,4 +64,9 @@
 .topnav a.active {
     background-color: rgba(243, 106, 131, 1);
     color: white;
+}
+
+.content{
+    text-align: center;
+    margin-top: 15vh;
 }
