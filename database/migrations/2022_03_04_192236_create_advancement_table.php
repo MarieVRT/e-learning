@@ -17,18 +17,14 @@ return new class extends Migration
         Schema::create('advancement', function (Blueprint $table) {
             $table->id();
             $table->integer('points');
+            $table->integer('user_id');
             $table->unsignedBigInteger('language_id');
             $table->foreign('language_id')
                 ->references('id')
                 ->on('language')
                 ->onDelete('restrict')
                 ->onUpdate('restrict');
-            $table->unsignedBigInteger('user_id')->nullable();
-            $table->foreign('user_id')
-                ->references('id')
-                ->on('user')
-                ->onDelete('restrict')
-                ->onUpdate('restrict');
+
             $table->timestamps();
         });
     }
