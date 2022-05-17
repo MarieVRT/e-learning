@@ -20,7 +20,7 @@
                                         <a class="nav-link active text-white" data-toggle="pill" href="#profile">Profil</a>
                                     </li>
                                     <li>
-                                        <a class="nav-link text-white" data-toggle="pill" href="#profile-dashboard">Mes statistiques</a>
+                                        <button class="nav-link text-white" data-toggle="pill" onclick="window.location='{{ url("profile/stats/$u->id") }}'">Mes statistiques</button>
                                     </li>
                                 </ul>
                             </div>

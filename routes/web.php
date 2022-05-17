@@ -32,3 +32,6 @@ Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])-
 
 Route::post('/profile', [App\Http\Controllers\HomeController::class, 'profile']);
 
+Route::get('/profile/stats/{id}', [App\Http\Controllers\HomeController::class, 'stats'])->where('id','[0-9]+');
+
+Route::get('/language/3/', [App\Http\Controllers\LanguageController::class, 'store'])->name('language-store');
